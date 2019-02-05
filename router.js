@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Home from './home';
-import Profile from './profile';
+import HomeClass from './home';
+import ProfileClass from './profile';
 
 // const HomeStack = createStackNavigator({
 //     Home: {
@@ -15,18 +15,16 @@ import Profile from './profile';
 //     },
 // });
 
-const AppNavigator = createStackNavigator({
-    Home1: { screen: Home },
-    Profile1: { screen: Profile },
+const MainNavigator = createStackNavigator({
+    Home1: { screen: HomeClass },
+    Profile1: { screen: ProfileClass },
 }, {
-        initialRouteName: 'Home',
+        initialRouteName: 'Home1',
     });
 
-const AppNav1 = () => (
-    <AppNavigator />
-);
+const AppNav = createAppContainer(MainNavigator);
 
-export default AppNav1;
+export default AppNav;
 
 // const AppNav2 = createStackNavigator({
 //     screen: AppNavigator
